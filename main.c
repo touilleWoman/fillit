@@ -22,7 +22,8 @@ int 	main(int argc, char **argv)
 		ft_putstr("usage: ./fillit file");
 		return (0);
 	}
-	ret = verif(argv[1]); //all error situaion will return -1
+	ret = verif(argv[1]); //all error situaions return -1
+	printf("ret:%d\n", ret);
 	if (ret == -1)
 	{
 		return (0);

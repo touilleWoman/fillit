@@ -19,7 +19,6 @@ int		verif(char *argv)
 {
 	int		fd;
 	char	*line;
-	char	*block[500];
 	int		x;
 	int		ret;
 
@@ -30,12 +29,23 @@ int		verif(char *argv)
 		ft_putstr("open()error");
 		return (-1);
 	}
-	x = 0;
-	while (ret == 1)
+	x = 1;
+	while (1)
 	{
+		printf("x:%d\n", x);
 		ret = get_next_line(fd, &line);
-		block[x] = ft_strdup(line);
-		printf("block[%d]%s\n", x, block[x]);
+		if (ret != 1)
+			break;
+		if (x % 5 == 0)
+		{
+			if (line[0] != '\n')
+				printf("line[0] != '\n'");
+		}
+		if (x % 5 != 0)
+		{
+			//if (line[4] != '\n')
+			printf("%c\n", line[4]);
+		}
 		x++;
 	}
 
