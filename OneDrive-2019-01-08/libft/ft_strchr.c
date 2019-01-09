@@ -1,21 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jleblond <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: tlamart <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/23 18:54:20 by jleblond          #+#    #+#             */
-/*   Updated: 2018/11/23 18:54:22 by jleblond         ###   ########.fr       */
+/*   Created: 2018/11/17 15:22:01 by tlamart           #+#    #+#             */
+/*   Updated: 2018/11/21 16:07:50 by tlamart          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putstr_fd(char const *s, int fd)
+char	*ft_strchr(const char *s, int c)
 {
-	if (s != 0)
-	{
-		write(fd, s, ft_strlen(s))		
-	}
+	return (ft_memchr(s, c, ft_strlen(s) + 1));
 }

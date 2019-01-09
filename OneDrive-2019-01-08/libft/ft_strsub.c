@@ -1,21 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_strsub.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jleblond <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: tlamart <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/23 18:54:20 by jleblond          #+#    #+#             */
-/*   Updated: 2018/11/23 18:54:22 by jleblond         ###   ########.fr       */
+/*   Created: 2018/11/12 12:13:40 by tlamart           #+#    #+#             */
+/*   Updated: 2018/11/21 15:38:42 by tlamart          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putstr_fd(char const *s, int fd)
+char	*ft_strsub(char const *s, unsigned int start, size_t len)
 {
-	if (s != 0)
-	{
-		write(fd, s, ft_strlen(s))		
-	}
+	char	*str;
+
+	if (!s || !*s)
+		return (NULL);
+	if (!(str = ft_strnew(len)))
+		return (NULL);
+	ft_strncpy(str, s + start, len);
+	return (str);
 }

@@ -38,8 +38,8 @@ int		verif(char *argv)
 			break;
 		if (x % 5 == 0)
 		{
-			if (line[0] != '\n')
-				printf("line[0] != '\n'");
+			if (line[0] != '\0')
+				printf("line[0] != '\0'");
 		}
 		if (x % 5 != 0)
 		{

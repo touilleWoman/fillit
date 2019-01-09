@@ -3,7 +3,7 @@ CFLAGS = -Wall -Werror -Wextra
 
 .PHONY: all clean fclean re
 
-SOURCE = main.c verif.c get_next_line.c \
+SOURCE = *.c 
 
 HEADER = fillit.h
 
